@@ -39,7 +39,7 @@ namespace MindConnect
         public PagedMapping DataPointMappingsGet(string filter, int? size, int? page, string sort)
         {
             const string endpoint = "/dataPointMappings";
-            string requestUri = $"{this.BasePath}{endpoint}";
+            string requestUri = $"{BasePath}{endpoint}";
 
             var queryParams = new Dictionary<String, String>();
             if (filter != null) queryParams.Add("filter", Helpers.ParameterToString(filter)); // query parameter

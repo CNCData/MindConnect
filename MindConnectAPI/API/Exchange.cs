@@ -12,9 +12,17 @@ namespace MindConnect
     /// </summary>
     public class Exchange : IExchange
     {
-        const string baseUri = "http://localhost:56942";
-        const string endpoint = "/exchange";
-        string requestUri = $"{baseUri}{endpoint}";
+        public Exchange(String basePath = "https://localhost/api/mindconnect/v3")
+        {
+            BasePath = basePath;
+        }
+
+        /// <summary>
+        /// Gets or sets the base path.
+        /// </summary>
+        /// <value>The base path</value>
+        public string BasePath { get; set; }
+
         /// <summary>
         ///  
         /// </summary>s
@@ -23,6 +31,10 @@ namespace MindConnect
         /// <returns></returns>
         public void ExchangePost(string userAgent, byte[] message)
         {
+            const string endpoint = "/exchange";
+
+            string requestUri = $"{BasePath}{endpoint}";
+
             // verify the required parameter 'userAgent' is set
             if (userAgent == null) throw new ApiException(400, "Missing required parameter 'userAgent' when calling ExchangePost");
 

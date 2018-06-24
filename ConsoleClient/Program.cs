@@ -8,7 +8,6 @@ namespace ConsoleClient
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             Mappings m = new Mappings();
             PagedMapping pagedMapping = m.DataPointMappingsGet(string.Empty,null,null,string.Empty);
         }
