@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MindConnect", "MindConnectA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClient", "HttpClient\HttpClient.csproj", "{D28EAC8E-F883-4A32-9EB9-9E917224CA69}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{E3D88529-0562-4F41-BDE1-6D14510B75EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D28EAC8E-F883-4A32-9EB9-9E917224CA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D28EAC8E-F883-4A32-9EB9-9E917224CA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D28EAC8E-F883-4A32-9EB9-9E917224CA69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3D88529-0562-4F41-BDE1-6D14510B75EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D88529-0562-4F41-BDE1-6D14510B75EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D88529-0562-4F41-BDE1-6D14510B75EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D88529-0562-4F41-BDE1-6D14510B75EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

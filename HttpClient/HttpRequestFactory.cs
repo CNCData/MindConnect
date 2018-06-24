@@ -10,16 +10,16 @@ namespace HttpClient
         public static async Task<HttpResponseMessage> Get(string requestUri)
             => await Get(requestUri, null, string.Empty);
 
-        public static async Task<HttpResponseMessage> Get(string requestUri, Dictionary<String, String> queryParams)
+        public static async Task<HttpResponseMessage> Get(string requestUri, string queryParams)
            => await Get(requestUri, queryParams, string.Empty);
 
-        public static async Task<HttpResponseMessage> Get(string requestUri, Dictionary<String, String> queryParams, string bearerToken)
+        public static async Task<HttpResponseMessage> Get(string requestUri, string queryParams, string bearerToken)
         {
             var builder = new HttpRequestBuilder()
                                 .AddMethod(HttpMethod.Get)
                                 .AddRequestUri(requestUri)
-                                .AddBearerToken(bearerToken);
-
+                                .AddBearerToken(bearerToken)
+                                .AddUriQueryString(queryParams);
             return await builder.SendAsync();
         }
 

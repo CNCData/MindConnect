@@ -36,9 +36,9 @@ namespace HttpClient
             return this;
         }
 
-        public HttpRequestBuilder AddUriQueryString(Dictionary<String, String> uriQueryString)
+        public HttpRequestBuilder AddUriQueryString(string uriQueryString)
         {
-            this.uriQueryString = uriQueryString.ToString();
+            this.uriQueryString = uriQueryString;
             return this;
         }
 
@@ -82,14 +82,16 @@ namespace HttpClient
             // Check required arguments
             EnsureArguments();
 
-            UriBuilder builder = new UriBuilder(this.requestUri);
-            builder.Query = "name='abc'&password='cde'";
+            UriBuilder uriBuilder = new UriBuilder(this.requestUri);
+            
+            if (!string.IsNullOrEmpty(this.requestUri))
+                uriBuilder.Query =  uriQueryString;
 
             // Set up request
             var request = new HttpRequestMessage
             {
                 Method = this.method,
-                RequestUri = new Uri(this.requestUri)
+                RequestUri = uriBuilder.Uri
             };
 
             if (this.content != null)

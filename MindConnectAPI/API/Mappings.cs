@@ -47,7 +47,7 @@ namespace MindConnect
             if (page != null) queryParams.Add("page", Helpers.ParameterToString(page)); // query parameter
             if (sort != null) queryParams.Add("sort", Helpers.ParameterToString(sort)); // query parameter
 
-            var response = HttpRequestFactory.Get(requestUri, queryParams).Result;
+            var response = HttpRequestFactory.Get(requestUri, Helpers.DictionaryToUriQueryString(queryParams) ).Result;
 
             if (((int)response.StatusCode) >= 400)
             {

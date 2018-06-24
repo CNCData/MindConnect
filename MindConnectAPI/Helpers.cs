@@ -29,6 +29,26 @@ namespace MindConnect
         }
 
         /// <summary>
+        /// If parameter is DateTime, output in a formatted string (default ISO 8601), customizable with Configuration.DateTime.
+        /// If parameter is a list of string, join the list with ",".
+        /// Otherwise just return the string.
+        /// </summary>
+        /// <param name="obj">The parameter (header, path, query, form).</param>
+        /// <returns>Formatted string.</returns>
+        public static string DictionaryToUriQueryString(Dictionary<string, string> dictionary)
+        {
+            string queryString = string.Empty;
+
+            foreach (var query in dictionary)
+            {
+                string queryQueryString = queryString + query.Key + "=" + query.Value;
+                queryString = queryString == string.Empty ? queryQueryString  : "?" + queryQueryString;
+            }
+
+            return queryString;
+        }
+
+        /// <summary>
         /// Encode string in base64 format.
         /// </summary>
         /// <param name="text">String to be encoded.</param>
