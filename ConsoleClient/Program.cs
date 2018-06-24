@@ -1,5 +1,6 @@
 ﻿using System;
 using MindConnect;
+using MindConnect.Model;
 
 namespace ConsoleClient
 {
@@ -9,7 +10,7 @@ namespace ConsoleClient
         {
             Console.WriteLine("Hello World!");
             Mappings m = new Mappings();
-            var t = m.DataPointMappingsGet(string.Empty,null,null,string.Empty);
+            PagedMapping pagedMapping = m.DataPointMappingsGet(string.Empty,null,null,string.Empty);
         }
     }
 }
